@@ -1,0 +1,20 @@
+{
+  "name": "botomy-node-starter",
+  "version": "1.0.0",
+  "description": "Starter project for running a Botomy node player",
+  "scripts": {
+    "dev": "nodemon --watch './**/*.ts' --exec 'ts-node' index.ts",
+    "start": "ts-node index.ts"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "fastify": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "fastify-tsconfig": "^2.0.0",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
