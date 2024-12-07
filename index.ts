@@ -1,12 +1,4 @@
-import fastify from "fastify";
-import play from "./src/play";
-
-const server = fastify();
-
-server.post("/", async (request) => {
-  let levelData = request.body;
-  return play(levelData);
-});
+import server from "./server";
 
 server.listen({ port: 3000 }, (err, address) => {
   if (err) {
