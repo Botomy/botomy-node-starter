@@ -3,7 +3,7 @@ import play from "./play";
 
 describe("play", () => {
   it("should return the default message when the level data is empty", () => {
-    const testLevelData: Partial<LevelData> = {
+    const testLevelData: LevelData = {
       items: [],
       enemies: [],
       players: [],
@@ -50,6 +50,16 @@ describe("play", () => {
         type: "player",
       },
       hazards: [],
+      game_info: {
+        friendly_fire: false,
+        game_type: "rpg",
+        map: "basic",
+        match_id: "test_id",
+        state: "WAITING",
+        time_remaining_s: 1800,
+      },
+      obstacles: [],
+      stats: [],
     };
     const moves = play(testLevelData as LevelData);
     expect(moves).toEqual([{ speak: "hi" }]);
