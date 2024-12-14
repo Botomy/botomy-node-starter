@@ -61,7 +61,7 @@ describe("play", () => {
       obstacles: [],
       stats: [],
     };
-    const moves = play(testLevelData as LevelData);
+    const moves = play(testLevelData);
     expect(moves).toEqual([{ speak: "hi" }]);
   });
 });
