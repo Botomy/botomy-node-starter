@@ -1,3 +1,5 @@
+import { LevelData, Move, Position } from "../lib/types";
+
 function distSquaredTo(
   a: { x: number; y: number },
   b: { x: number; y: number }
@@ -6,10 +8,7 @@ function distSquaredTo(
   return Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2);
 }
 
-function getClosestItem(
-  position: { x: number; y: number },
-  items: { position: { x: number; y: number } }[]
-): { position: { x: number; y: number }; [key: string]: any } | null {
+function getClosestItem(position: Position, items: { position: Position }[]) {
   let minDist = Number.POSITIVE_INFINITY;
   let target: {
     position: { x: number; y: number };
@@ -26,8 +25,8 @@ function getClosestItem(
   return target;
 }
 
-function play(levelData: any): any[] {
-  const moves: any[] = [];
+function play(levelData: LevelData): Move[] {
+  const moves: Move[] = [];
   const ownPlayer = levelData.own_player;
   const players = levelData.players;
   const items = levelData.items;

@@ -1,10 +1,11 @@
 import fastify from "fastify";
 import play from "./src/play";
+import { LevelData } from "./lib/types";
 
 const server = fastify();
 
 server.post("/", async (request) => {
-  let levelData = request.body;
+  let levelData = request.body as LevelData;
   return play(levelData);
 });
 
