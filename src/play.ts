@@ -49,10 +49,12 @@ function play(levelData: LevelData): Move[] {
   }
 
   if (ownPlayer.health / ownPlayer.max_health < 0.51) {
+    // health is less than 50% so use the potion to heal
     moves.push({ use: "big_potion" });
   }
 
   if (ownPlayer.levelling.available_skill_points > 0) {
+    // skill points available - level up
     moves.push({ redeem_skill_point: "speed" });
   }
 
