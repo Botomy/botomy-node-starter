@@ -61,7 +61,7 @@ export interface Player extends Character {
   is_dashing: boolean;
   is_zapping: boolean;
   levelling: {
-    attack: number;
+    level: number;
   };
   score: number;
   shield_raised: boolean;
