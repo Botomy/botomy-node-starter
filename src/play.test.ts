@@ -38,6 +38,9 @@ describe("play", () => {
         shield_raised: false,
         special_equipped: "",
         speech: "",
+        is_overclocking: false,
+        overclock_duration: 0,
+        has_health_regen: false,
         levelling: {
           attack: 1,
           health: 1,
@@ -48,6 +51,7 @@ describe("play", () => {
         score: 0,
         unleashing_shockwave: false,
         type: "player",
+        points: 0,
       },
       hazards: [],
       game_info: {

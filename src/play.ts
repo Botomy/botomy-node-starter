@@ -58,7 +58,7 @@ function play(levelData: LevelData): Move[] {
     moves.push({ redeem_skill_point: "speed" });
   }
 
-  moves.push({ speak: "hi" });
+  moves.push({ speak: "Hello Botomy!" });
 
   return moves;
 }

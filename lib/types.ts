@@ -16,7 +16,7 @@ export type ItemType =
 
 export type PowerUpType = "freeze" | "bomb" | "shockwave";
 
-export type HazardType = "bomb" | "icicle";
+export type HazardType = "bomb" | "icicle" | "lightning_storm";
 
 export type Position = {
   x: number;
@@ -33,6 +33,7 @@ export interface Item extends GameObject {
   type: ItemType;
   position: Position;
   value: number;
+  points: number;
 }
 
 export interface Character extends GameObject {
@@ -43,6 +44,7 @@ export interface Character extends GameObject {
   is_frozen: boolean;
   is_pushed: boolean;
   is_zapped: boolean;
+  points: number;
 }
 
 export interface Enemy extends Character {
@@ -59,7 +61,7 @@ export interface Player extends Character {
   type: PlayerType;
   display_name: string;
   is_dashing: boolean;
-  is_zapping: boolean;
+  is_zapping: boolean; // deprecated
   levelling: {
     level: number;
   };
@@ -68,6 +70,8 @@ export interface Player extends Character {
   special_equipped: string;
   speech: string;
   unleashing_shockwave: boolean;
+  is_overclocking: boolean;
+  has_health_regen: boolean;
 }
 
 export interface OwnPlayer extends Player {
@@ -83,6 +87,7 @@ export interface OwnPlayer extends Player {
   is_shield_ready: boolean;
   is_special_ready: boolean;
   max_health: number;
+  overclock_duration: number;
   levelling: {
     level: number;
     available_skill_points: number;
@@ -96,6 +101,7 @@ export interface Hazard extends GameObject {
   status: "idle" | "active" | "charging";
   type: HazardType;
   attack_damage: number;
+  owner_id: string;
 }
 
 export interface GameInfo {
@@ -111,6 +117,7 @@ export interface GameInfo {
     | "ENDED"
     | "MATCH_COMPLETED";
   time_remaining_s: number;
+  latency: number;
 }
 
 export interface PlayerStat {
@@ -118,7 +125,17 @@ export interface PlayerStat {
   score: number;
   kills: number;
   deaths: number;
+  coins: number;
   kd_ratio: number;
+  kill_streak: number;
+  overclocks: number;
+  xps: number;
+  wolf_kills: number;
+  ghoul_kills: number;
+  tiny_kills: number;
+  minotaur_kills: number;
+  player_kills: number;
+  self_destructs: number;
 }
 
 export interface LevelData {
@@ -136,6 +153,7 @@ export type Move =
   | "attack"
   | "special"
   | "dash"
+  | "shield"
   | { move_to: Position }
   | { speak: string }
   | { use: "ring" | "speed_zapper" | "big_potion" }
