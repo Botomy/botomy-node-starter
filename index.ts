@@ -4,9 +4,16 @@ import { LevelData } from "./lib/types";
 
 const server = fastify();
 
+let lastCall = Date.now();
 server.post("/", async (request) => {
+  let diff = Date.now() - lastCall;
+  console.log(1000 / diff);
+  lastCall = Date.now();
+  return [];
   let levelData = request.body as LevelData;
-  return play(levelData);
+  const moves = play(levelData);
+  console.log(moves);
+  return moves;
 });
 
 server.listen({ port: 3000 }, (err, address) => {

@@ -61,7 +61,6 @@ export interface Player extends Character {
   type: PlayerType;
   display_name: string;
   is_dashing: boolean;
-  is_zapping: boolean; // deprecated
   levelling: {
     level: number;
   };
@@ -86,6 +85,7 @@ export interface OwnPlayer extends Player {
   is_dash_ready: boolean;
   is_shield_ready: boolean;
   is_special_ready: boolean;
+  is_zap_ready: boolean;
   max_health: number;
   overclock_duration: number;
   levelling: {

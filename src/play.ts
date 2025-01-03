@@ -41,6 +41,7 @@ function play(levelData: LevelData): Move[] {
     if (target.health !== undefined) {
       if (distSquaredTo(ownPlayer.position, target.position) < 15625) {
         moves.push("attack");
+        moves.push("shield");
       }
     }
     moves.push({ move_to: target.position });
@@ -55,7 +56,8 @@ function play(levelData: LevelData): Move[] {
 
   if (ownPlayer.levelling.available_skill_points > 0) {
     // skill points available - level up
-    moves.push({ redeem_skill_point: "speed" });
+    let skill = ["attack", "health", "speed"][Math.floor(Math.random()) % 3];
+    moves.push({ redeem_skill_point: skill });
   }
 
   moves.push({ speak: "Hello Botomy!" });
