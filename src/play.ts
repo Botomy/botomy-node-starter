@@ -62,6 +62,13 @@ function play(levelData: LevelData): Move[] {
 
   moves.push({ speak: "Hello Botomy!" });
 
+  moves.push({
+    debug_info: {
+      target_id: target?.id,
+      message: "oh hai",
+    },
+  });
+
   return moves;
 }
 export default play;
