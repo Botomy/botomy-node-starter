@@ -71,6 +71,7 @@ export interface Player extends Character {
   unleashing_shockwave: boolean;
   is_overclocking: boolean;
   has_health_regen: boolean;
+  base_speed: number;
 }
 
 export interface OwnPlayer extends Player {
