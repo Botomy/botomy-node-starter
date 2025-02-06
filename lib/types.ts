@@ -34,12 +34,14 @@ export interface Item extends GameObject {
   position: Position;
   value: number;
   points: number;
+  power: PowerUpType | undefined;
 }
 
 export interface Character extends GameObject {
   attack_damage: number;
   direction: "right" | "left";
   health: number;
+  max_health: number;
   is_attacking: boolean;
   is_frozen: boolean;
   is_pushed: boolean;
@@ -49,7 +51,6 @@ export interface Character extends GameObject {
 
 export interface Enemy extends Character {
   type: EnemyType;
-  max_health: number;
 }
 
 export interface Collision {
@@ -87,7 +88,6 @@ export interface OwnPlayer extends Player {
   is_shield_ready: boolean;
   is_special_ready: boolean;
   is_zap_ready: boolean;
-  max_health: number;
   overclock_duration: number;
   levelling: {
     level: number;
