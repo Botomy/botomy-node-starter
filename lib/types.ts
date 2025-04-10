@@ -35,6 +35,7 @@ export interface Item extends GameObject {
   value: number;
   points: number;
   power: PowerUpType | undefined;
+  health: number | undefined;
 }
 
 export interface Character extends GameObject {
