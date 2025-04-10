@@ -155,6 +155,8 @@ export interface DebugInfo {
   message: string;
 }
 
+export type SkillTypes = "attack" | "health" | "speed";
+
 export type Move =
   | "attack"
   | "special"
@@ -163,5 +165,5 @@ export type Move =
   | { move_to: Position }
   | { speak: string }
   | { use: "ring" | "speed_zapper" | "big_potion" }
-  | { redeem_skill_point: "attack" | "health" | "speed" }
+  | { redeem_skill_point: SkillTypes }
   | { debug_info: DebugInfo };

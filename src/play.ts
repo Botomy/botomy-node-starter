@@ -1,4 +1,4 @@
-import { LevelData, Move, Position } from "../lib/types";
+import { LevelData, Move, Position, SkillTypes } from "../lib/types";
 
 function distSquaredTo(
   a: { x: number; y: number },
@@ -56,7 +56,9 @@ function play(levelData: LevelData): Move[] {
 
   if (ownPlayer.levelling.available_skill_points > 0) {
     // skill points available - level up
-    let skill = ["attack", "health", "speed"][Math.floor(Math.random()) % 3];
+    let skill = (["attack", "health", "speed"] as SkillTypes[])[
+      Math.floor(Math.random() * 3)
+    ];
     moves.push({ redeem_skill_point: skill });
   }
 
