@@ -1,6 +1,6 @@
 # botomy-node-starter
 
-Starter project for running a [Botomy](http://botomy.vercel.app) node player.
+Starter project for running a [Botomy](http://botomy.com) node player.
 
 This uses `fastify` as the server. It is set up to listen to `post` requests on port `3000`.
 
