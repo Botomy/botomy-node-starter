@@ -12,7 +12,7 @@ function play(levelData: LevelData): Move[] {
   moves.push({
     debug_info: {
       message:
-        "Congratulations! You have reached the play function. Modify this (src/play.ts) to implement your bot's logic. Try adding move_to: {x,y} to your move array",
+        "Congratulations! You have reached the play function. Modify this file (src/play.ts) to implement your bot's logic.",
     },
   });
 
