@@ -27,3 +27,11 @@ Hot reload:
 ```
 npm run dev
 ```
+
+## Example bot
+
+A sample bot can be found in `src/example_bot.ts`
+
+## License
+
+This project is licensed under the MIT License.

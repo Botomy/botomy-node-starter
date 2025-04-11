@@ -152,8 +152,8 @@ export interface LevelData {
 }
 
 export interface DebugInfo {
-  target_id: string;
-  message: string;
+  target_id?: string;
+  message?: string;
 }
 
 export type SkillTypes = "attack" | "health" | "speed";
