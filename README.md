@@ -28,6 +28,12 @@ Hot reload:
 npm run dev
 ```
 
+# Helpful Info
+
+## Wiki and level data
+
+https://brokkli-labs.github.io/Botomy/docs/game-play/level-data
+
 ## Example bot
 
 A sample bot can be found in `src/example_bot.ts`
