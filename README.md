@@ -19,12 +19,6 @@ npm install
 Starts a server on port 3000 and calls the `play` function in `src/play.ts`
 
 ```
-npm start
-```
-
-Hot reload:
-
-```
 npm run dev
 ```
 
