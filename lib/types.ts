@@ -79,9 +79,9 @@ export interface Player extends Character {
 export interface OwnPlayer extends Player {
   collisions: Collision[];
   items: {
-    big_potions: { value: number }[];
-    speed_zappers: { duration: number; value: number }[];
-    rings: { duration: number }[];
+    big_potions: number;
+    speed_zappers: number;
+    rings: number;
   };
   is_cloaked: boolean;
   is_colliding: boolean;
