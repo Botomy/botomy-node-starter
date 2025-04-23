@@ -1,11 +1,11 @@
 import { LevelData, Move, Position, SkillTypes } from "../lib/types";
 
-function distSquaredTo(
+function distTo(
   a: { x: number; y: number },
   b: { x: number; y: number }
 ): number {
   // c^2 = a^2 + b^2
-  return Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2);
+  return Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2));
 }
 
 function getClosestItem(position: Position, items: { position: Position }[]) {
@@ -16,7 +16,7 @@ function getClosestItem(position: Position, items: { position: Position }[]) {
   } | null = null;
 
   for (const item of items) {
-    const dist = distSquaredTo(position, item.position);
+    const dist = distTo(position, item.position);
     if (dist < minDist) {
       minDist = dist;
       target = item;
@@ -39,7 +39,7 @@ function play(levelData: LevelData): Move[] {
 
   if (target) {
     if (target.health !== undefined) {
-      if (distSquaredTo(ownPlayer.position, target.position) < 15625) {
+      if (distTo(ownPlayer.position, target.position) < 125) {
         moves.push("attack");
         moves.push("shield");
       }
