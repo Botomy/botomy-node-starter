@@ -1,6 +1,6 @@
 # botomy-node-starter
 
-Starter project for running a [Botomy](http://botomy.com) node player.
+Starter project for running a [Botomy](https://botomy.com) node player.
 
 This uses `fastify` as the server. It is set up to listen to `post` requests on port `3000`.
 
@@ -26,7 +26,7 @@ npm run dev
 
 ## Wiki and level data
 
-https://brokkli-labs.github.io/Botomy/docs/game-play/level-data
+https://botomy.github.io/Botomy/docs/level-data
 
 ## Example bot
 
